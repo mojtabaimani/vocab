@@ -23,8 +23,10 @@ if __name__ == '__main__':
 
     f1=open(args.basefile)
     f2=open(args.newfile)
-    base=set(f1.read().split())
-    new=set(f2.read().split())
+    base=f1.read().split()
+    new=f2.read().split()
+    base={x.lower() for x in base}
+    new={x.lower() for x in new}
     f1.close()
     f2.close()
 
